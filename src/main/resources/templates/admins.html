@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+<head>
+    <title>Administrators Management</title>
+</head>
+<body>
+<div layout:fragment="content" class="list-content">
+    <h3> All Administrators</h3>
+    <div th:switch="${admins}">
+        <p>
+            <a href="/admins/create" class="btn btn-large btn-success"><i>Create</i></a>
+        </p>
+        <div>
+            <h2 th:case="null">No Administrators yet!</h2>
+            <div th:case="*">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Full name</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="admin : ${admins}">
+                        <td th:text="${admin.username}"></td>
+                        <td th:text="${admin.fullName}"></td>
+                        <td th:text="${admin.email}"></td>
+                        <td th:text="${admin.phoneNumber}"></td>
+                        <td><a th:href="@{/admins/delete/{id}(id=${admin.id})}" class="btn btn-large btn-danger"><i>Delete</i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

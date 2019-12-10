@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+<head>
+    <title>Shapes Management</title>
+</head>
+<body>
+<div layout:fragment="content" class="list-content">
+    <h3> All Shapes</h3>
+    <div th:switch="${shapes}">
+        <p>
+            <a href="/shapes/create" class="btn btn-large btn-success"><i>Create</i></a>
+        </p>
+        <div>
+            <h2 th:case="null">No Shapes yet!</h2>
+            <div th:case="*">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Properties</th>
+                        <th>Kid name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="shape : ${shapes}">
+                        <td th:text="${shape.name}"></td>
+                        <td th:text="${shape.category}"></td>
+                        <td th:text="${shape.shapeProperties}"></td>
+                        <td th:text="${shape.username}"></td>
+                        <td><a th:href="@{/shapes/edit/{id}(id=${shape.id})}"
+                               class="btn btn-large btn-primary"><i>Edit</i></a></td>
+                        <td><a th:href="@{/shapes/delete/{id}(id=${shape.id})}" class="btn btn-large btn-danger"><i>Delete</i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

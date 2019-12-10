@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+<head>
+    <title>Categories Management</title>
+</head>
+<body>
+<div layout:fragment="content" class="list-content">
+    <h3> All Shape Categories</h3>
+    <div th:switch="${categories}">
+        <p>
+            <a href="/categories/create" class="btn btn-large btn-success"><i>Create</i></a>
+        </p>
+        <div>
+            <h2 th:case="null">No Categories yet!</h2>
+            <div th:case="*">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Requirements</th>
+                        <th>Area formula</th>
+                        <th>Conditions to fall into other categories</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="category : ${categories}">
+                        <td th:text="${category.name}"></td>
+                        <td th:text="${category.requirements}"></td>
+                        <td th:text="${category.areaFormula}"></td>
+                        <td th:text="${category.conditions}"></td>
+                        <td><a th:href="@{/categories/delete/{id}(id=${category.id})}" class="btn btn-large btn-danger"><i>Delete</i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
