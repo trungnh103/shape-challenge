@@ -65,7 +65,7 @@ public class ShapeServiceTest {
         Category rectangle = new Category();
         rectangle.setName("RECTANGLE");
         CategoryCondition squareCondition = new CategoryCondition("SQUARE", "width==height");
-        rectangle.setConditionsToBecomeOtherCategories(Arrays.asList(squareCondition));
+        rectangle.setConditions(Arrays.asList(squareCondition));
         Shape shape = new Shape(rectangle, "TOKYO RECTANGLE");
         ShapeProperty width = new ShapeProperty("width", "4");
         ShapeProperty height = new ShapeProperty("height", "4");

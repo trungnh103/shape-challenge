@@ -21,7 +21,7 @@ public class Category {
 
     private String areaFormula;
 
-    private List<CategoryCondition> conditionsToBecomeOtherCategories;
+    private List<CategoryCondition> conditions;
 
     public String toString() {
         return name;

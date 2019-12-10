@@ -51,7 +51,7 @@ public class CategoryServiceTest {
         rectangle.setRequirements(Arrays.asList("width", "height"));
         rectangle.setAreaFormula("width*height");
         CategoryCondition categoryCondition = new CategoryCondition("SQUARE", "width==height");
-        rectangle.setConditionsToBecomeOtherCategories(Arrays.asList(categoryCondition));
+        rectangle.setConditions(Arrays.asList(categoryCondition));
 
         List<Category> categories = Arrays.asList(square, rectangle);
 

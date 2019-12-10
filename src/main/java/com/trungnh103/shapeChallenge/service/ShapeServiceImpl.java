@@ -67,7 +67,7 @@ public class ShapeServiceImpl implements ShapeService {
         possibleCategories.add(shape.getCategory().getName());
         Category category = shape.getCategory();
 
-        Iterator conditionIterator = category.getConditionsToBecomeOtherCategories().iterator();
+        Iterator conditionIterator = category.getConditions().iterator();
         while (conditionIterator.hasNext()) {
             CategoryCondition condition = (CategoryCondition) conditionIterator.next();
             String conditionStr = condition.getCondition();

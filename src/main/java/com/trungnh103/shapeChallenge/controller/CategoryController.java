@@ -62,8 +62,8 @@ public class CategoryController {
 
     @RequestMapping(value = "/create", params = {"addCondition"})
     public ModelAndView addCondition(final Category category) {
-        if (category.getConditionsToBecomeOtherCategories() == null) category.setConditionsToBecomeOtherCategories(new ArrayList<>());
-        category.getConditionsToBecomeOtherCategories().add(new CategoryCondition(null, null));
+        if (category.getConditions() == null) category.setConditions(new ArrayList<>());
+        category.getConditions().add(new CategoryCondition(null, null));
         ModelAndView modelAndView = new ModelAndView();
         List<Category> categories = categoryService.findAll();
         modelAndView.addObject("categories", categories);
@@ -75,7 +75,7 @@ public class CategoryController {
     @RequestMapping(value = "/create", params = {"removeCondition"})
     public ModelAndView removeCondition(final Category category, final HttpServletRequest req) {
         final Integer conditionIndex = Integer.valueOf(req.getParameter("removeCondition"));
-        category.getConditionsToBecomeOtherCategories().remove(conditionIndex.intValue());
+        category.getConditions().remove(conditionIndex.intValue());
         ModelAndView modelAndView = new ModelAndView();
         List<Category> categories = categoryService.findAll();
         modelAndView.addObject("categories", categories);

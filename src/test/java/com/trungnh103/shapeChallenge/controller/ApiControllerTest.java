@@ -68,7 +68,7 @@ public class ApiControllerTest {
         rectangle.setRequirements(Arrays.asList("width", "height"));
         rectangle.setAreaFormula("width*height");
         CategoryCondition categoryCondition = new CategoryCondition("SQUARE", "width==height");
-        rectangle.setConditionsToBecomeOtherCategories(Arrays.asList(categoryCondition));
+        rectangle.setConditions(Arrays.asList(categoryCondition));
 
         Shape tokyoSquare = new Shape(square, "TOKYO SQUARE");
         tokyoSquare.setId("1");
