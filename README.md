@@ -9,14 +9,14 @@ This is my solution for Java BE Developer - Take-home Test
 ./gradlew clean test
 
 ### Explanation
-There are Restful API for mobile app and CMS for administrators
-CMS: http://localhost:8080
-API documentation: http://localhost:8080/swagger-ui.html
-Every endpoints need authentication
-There are two kinds of users: ADMIN and KID.
-First Admin (username: trung, password: p@ssw0rd) is created at the beginning
-APIs allow view/create/update/delete shapes associated with logged in user (KID)
-Only ADMINs can access CMS views for Administrators, Categories and Shapes
+- [There are Restful API for mobile app and CMS for administrators]
+- [CMS: http://localhost:8080]
+- [API documentation: http://localhost:8080/swagger-ui.html]
+- [Every endpoints need authentication]
+- [There are two kinds of users: ADMIN and KID.]
+- [First Admin (username: trung, password: p@ssw0rd) is created at the beginning]
+- [APIs allow view/create/update/delete shapes associated with logged in user (KID)]
+- [Only ADMINs can access CMS views for Administrators, Categories and Shapes]
 
 ### Example of Category and Shape
 Category {
