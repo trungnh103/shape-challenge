@@ -133,5 +133,6 @@ And the application will connect to MongoDB according to application.yml
 
 ### Docker
 sudo docker build --tag=shape-challenge:latest --rm=true .
+
 sudo docker run --name=shape-challenge --publish=8080:8080 shape-challenge:latest
 
