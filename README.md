@@ -1,6 +1,54 @@
 # Shape Challenge
 
-This is my solution for Java BE Developer - Take-home Test
+### Background
+The mobile application is meant to assist kids in learning basic geometry.
+
+To start, the ​kid​ would select one of the available ​shape categories​ including but not
+limited to ​triangle, square, rectangle, parallelogram, rhombus, kite, trapezium, circle
+and ​ellipse​.
+
+On selection, the ​kid​ is required to enter a minimum requirement the ​shape​ requires to
+form; for example, a ​square​ would require a single ​size​, whereas a ​rectangle​ requires
+both ​width​ and ​length​. If a ​shape​ can be formed using different requirement set, a
+selection of requirement sets may be added.
+
+The application will then draw a picture of the said ​shape​, display its ​area​, and identify if
+it falls into other ​shape​ categories; for example, a ​rectangle​ can be called a
+parallelogram​. An option to save the ​shape​ is available as well.
+
+### Basic Requirements
+To accommodate the mobile application, these APIs are needed
+
+● API to list all the ​shape​ ​categories​, each with its corresponding requirement sets
+of dimension, length and/or angle.
+
+● API to submit the ​shape​, returning with ​area​ and possible ​categories​.
+
+● API to save the ​shape
+
+● API to list all the saved ​shapes
+
+### Intermediate Requirements
+● There is a content management system for the administrator to
+list/create/edit/delete
+
+● shapes for each kid
+
+● Administrator can login, logout and create/delete other administrator
+○ The first Administrator can be just seeded
+
+● Kid can signup, signin, signout
+
+### Challenging Requirements
+The CMS should also allow administrator to manage shape categories and its
+
+● Name
+
+● Requirements
+
+● Area formula
+
+● Conditions that allows the shape to fall into other categories
 
 ### Run
 ./gradlew bootRun
@@ -82,4 +130,8 @@ In case a real MongoDB is used, we can set the scope of Embedded MongoDB to "tes
 	testImplementation('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
 	
 And the application will connect to MongoDB according to application.yml
+
+### Docker
+sudo docker build --tag=shape-challenge:latest --rm=true .
+sudo docker run --name=shape-challenge --publish=8080:8080 shape-challenge:latest
 
